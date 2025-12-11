@@ -1,21 +1,22 @@
 import React, { useState } from 'react'
-import ProgramSubnav from './programs/ProgramSubnav'
-import ProgramList from './programs/ProgramList'
-import CohortList from './programs/CohortList'
-import PipelineList from './programs/PipelineList'
-import PipelineBoard from './programs/PipelineBoard'
-import Users from './programs/sections/Users'
-import Directory from './programs/sections/Directory'
-import Mail from './programs/sections/Mail'
-import Form from './programs/sections/Form'
-import Groups from './programs/sections/groups'
-import Partnership from './programs/sections/Partnership'
-import SiteSettings from './programs/sections/SiteSettings'
-import SiteUsage from './programs/sections/Siteusage'
-import Payments from './programs/sections/Payments'
-import { seed } from './programs/data'
+import ProgramSubnav from './setup/ProgramSubnav'
+import ProgramList from './setup/ProgramList'
+import ProgramDashboard from './setup/ProgramDashboard'
+import CohortList from './setup/CohortList'
+import PipelineList from './setup/PipelineList'
+import PipelineBoard from './setup/PipelineBoard'
+import Users from './setup/sections/Users'
+import Directory from './setup/sections/Directory'
+import Mail from './setup/sections/Mail'
+import Form from './setup/sections/Form'
+import Groups from './setup/sections/groups'
+import Partnership from './setup/sections/Partnership'
+import SiteSettings from './setup/sections/SiteSettings'
+import SiteUsage from './setup/sections/Siteusage'
+import Payments from './setup/sections/Payments'
+import { seed } from './setup/data'
 
-function Programs() {
+function Setup() {
     const [programs, setPrograms] = useState(seed.programs)
     const [active, setActive] = useState('Programs')
     const [selectedProgram, setSelectedProgram] = useState(null)
@@ -55,7 +56,7 @@ function Programs() {
                     )}
                 </div>
 
-                {active === 'Users' && <Users />}
+                {active === 'Users' && <Users programs={programs} />}
                 {active === 'Directory' && <Directory />}
                 {active === 'Mail' && <Mail />}
                 {active === 'Form' && <Form />}
@@ -73,6 +74,13 @@ function Programs() {
                             setSelectedCohort(null)
                             setSelectedPipeline(null)
                         }}
+                    />
+                )}
+
+                {active === 'Programs' && selectedProgram && (
+                    <ProgramDashboard
+                        program={selectedProgram}
+                        onBack={() => setSelectedProgram(null)}
                     />
                 )}
 
@@ -129,4 +137,4 @@ function Programs() {
     )
 }
 
-export default Programs
+export default Setup

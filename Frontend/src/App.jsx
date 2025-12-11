@@ -6,7 +6,7 @@ import React from 'react'
 import Dashboard from './components/Dashboard'
 import Startups from './components/Startups'
 import Mentors from './components/Mentors'
-import Programs from './components/Programs'
+import Setup from './components/Setup'
 import Applications from './components/Applications'
 import Funding from './components/Funding'
 import Settings from './components/Settings'
@@ -29,7 +29,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/startups" element={<Startups />} />
             <Route path="/mentors" element={<Mentors />} />
-            <Route path="/programs" element={<Programs />} />
+            <Route path="/setup" element={<Setup />} />
             <Route path="/applications" element={<Applications />} />
             <Route path="/funding" element={<Funding />} />
             <Route path="/settings" element={<Settings />} />

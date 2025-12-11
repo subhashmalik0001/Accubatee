@@ -7,9 +7,10 @@ function Navigation() {
 
     const navItems = [
         { path: '/dashboard', label: 'Dashboard', icon: '🏠' },
+        
         { path: '/startups', label: 'Startups', icon: '🚀' },
+         { path: '/setup', label: 'Setup', icon: '📦' },
         { path: '/mentors', label: 'Mentors', icon: '🧑‍🏫' },
-        { path: '/programs', label: 'Programs', icon: '📦' },
         { path: '/applications', label: 'Applications', icon: '🗂️' },
         { path: '/funding', label: 'Funding', icon: '📈' },
         { path: '/tools', label: 'Tools', icon: '🛠️' },
